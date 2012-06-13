@@ -1,0 +1,5 @@
+source=../../fla/aaa.fla
+output=../../bin/
+
+source=../../fla/bbb.fla
+output=../../bin/

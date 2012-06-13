@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="GB2312"?>
+<dialog buttons="accept, cancel" id="CleanPro" title="清理专家 0.1">
+	<script>
+	function save()
+	{
+		var doc = fl.getDocumentDOM();
+		if(doc.path) {
+			doc.save();
+		}else{
+			fl.saveDocumentAs( doc );
+		}
+	}
+	</script>
+	<vbox>
+
+		<label value="注意：本产品在测试阶段" control="" />
+		<label value="为了您的身心健康，请先保存！" control="" />
+		<button label="我存" oncommand="save();" />
+		<separator />
+
+		<label value="清理在哪个文件夹内:" control="folderName" />
+		<textbox id="folderName" value="hbb" />
+		<checkbox id="isRemoveGuide" 	label="删除所有引导层" checked="false" accesskey="" />
+		<checkbox id="isCleanFolder" 	label="文件夹一起清理" checked="false" accesskey="" />
+		<checkbox id="isRemoveEmptyFolder" label="删除空文件夹" checked="false" accesskey="" />
+		
+	</vbox>
+</dialog>

@@ -1,0 +1,91 @@
+/*
+pCallback{timeline, layer, frame, element}
+当扫描进入时调用
+
+nCallback{timeline, layer, frame, element}
+当扫描退出时调用
+
+deeper
+是否进行深度扫描
+
+scaned
+扫描过的元素(elements)
+*/
+function scanDocument(pCallback, nCallback, deeper, scaned)
+{
+	var timelines = fl.getDocumentDOM().timelines;
+	for(var i=timelines.length-1; i>-1; --i){
+		scanTimeline(timelines[i], pCallback, nCallback, deeper, scaned);
+	}
+}
+
+/*
+指定对timeline的扫描
+*/
+function scanTimeline(timeline, pCallback, nCallback, deeper, scaned)
+{
+	if(!scaned) scaned = {};
+
+	if(!timeline) return;
+
+	var hasPrevElemCallback = pCallback && pCallback.element;
+	var hasPrevFrameCallback = pCallback && pCallback.frame;
+	var hasPrevLayerCallabck = pCallback && pCallback.layer;
+	var hasPrevTimelineCallback = pCallback && pCallback.timeline;
+
+	var hasNextElemCallback = nCallback && nCallback.element;
+	var hasNextFrameCallback = nCallback && nCallback.frame;
+	var hasNextLayerCallabck = nCallback && nCallback.layer;
+	var hasNextTimelineCallback = nCallback && nCallback.timeline;
+
+	var hasElementCallback = hasPrevElemCallback || hasNextElemCallback || deeper;
+	var hasFrameCallback = hasPrevFrameCallback || hasNextFrameCallback || deeper;
+	var hasLayerCallback = hasPrevLayerCallabck || hasNextLayerCallabck || deeper;
+
+	if(hasPrevTimelineCallback) pCallback.timeline(timeline, scaned);
+
+	if(hasElementCallback || hasFrameCallback || hasLayerCallback)
+	{
+		var layers = timeline.layers;
+		for(var j=timeline.layerCount-1; j>-1; --j)
+		{
+			if(hasPrevLayerCallabck) pCallback.layer(layers[j], scaned);
+
+			if(hasElementCallback || hasFrameCallback)
+			{
+				var frames = layers[j].frames;
+				if(frames == '') continue;
+				for(var k=layers[j].frameCount-1; k>-1; k=frames[k].startFrame-1)
+				{
+					if(hasPrevFrameCallback) pCallback.frame(frames[k], scaned);
+
+					if(hasElementCallback)
+					{
+						var elems = frames[k].elements;
+						if(elems == '') continue;
+						for(var e=elems.length-1; e>-1; --e)
+						{
+							if(hasPrevElemCallback) pCallback.element(elems[e], scaned);
+
+							if(deeper) {
+								if(elems[e].instanceType){
+									if(!scaned[ elems[e].libraryItem.name ]){
+										scaned[ elems[e].libraryItem.name ] = elems[e].libraryItem;
+
+										scanTimeline(elems[e].libraryItem.timeline, pCallback, nCallback, deeper, scaned);
+									}
+								}
+							}
+							if(hasNextElemCallback) nCallback.element(elems[e], scaned);
+						}
+					}
+					if(hasNextFrameCallback) nCallback.frame(frames[k], scaned);
+				}
+			}
+			if(hasNextLayerCallabck) nCallback.layer(layers[j], scaned);
+		}
+	}
+	if(hasNextTimelineCallback) nCallback.timeline(timeline, scaned);
+}
+
+

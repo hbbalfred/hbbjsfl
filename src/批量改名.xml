@@ -1,0 +1,88 @@
+﻿<dialog id="Changer" title="批量改名" buttons="accept,cancel">
+	<grid>
+		<columns>
+			<column></column>
+			<column></column>
+		</columns>
+		<rows>
+			<!-- Change Symbol Name -->
+			<row>
+				<label value="              全局前导零:"/>
+				<checkbox id="leadZero" label="使用前导零" />
+			</row>
+			<row>
+				<checkbox id="csName" label="修改元件名" checked="true"/>
+			</row>
+			<row>
+				<label value="元件名" />
+				<textbox id="sName" value="我的元件_" />
+			</row>
+			<row>
+				<label value="后缀号(0...N)" />
+				<textbox id="sNumber" value="0" />
+			</row>
+			<row>
+				<checkbox id="sIntoFolder" label="放入新的文件夹 |   文件夹名" />
+				<textbox id="sFolderName" value="我的文件夹" />
+			</row>
+			<row>
+				<label value="-----------------------------------------" />
+			</row>
+
+			<!-- Change Instance Name -->
+			<row>
+				<checkbox id="ciName" label="修改实例名"/>
+			</row>
+			<row>
+				<label value="实例名" />
+				<textbox id="iName" value="" />
+			</row>
+			<row>
+				<label value="后缀号(0...N)" />
+				<textbox id="iNumber" value="0" />
+			</row>
+			<row>
+				<label value="-----------------------------------------" />
+			</row>
+
+			<!-- Change Linkage Name -->
+			<row>
+				<checkbox id="clName" label="Change linkage identifier" />
+			</row>
+			<row>
+				<label value="Linkage identifier" />
+				<textbox id="lName" value="" />
+			</row>
+			<row>
+				<label value="Suffix start number(0...N)" />
+				<textbox id="lNumber" value="" />
+			</row>
+			<row>
+				<checkbox id="lExff" label="Export in first frame" checked="false" />
+			</row>
+			<row>
+				<label value="-----------------------------------------" />
+			</row>
+
+			<!-- Change Frame Label Name -->
+			<row>
+				<checkbox id="cflName" label="Change frame label" />
+			</row>
+			<row>
+				<label value="Frame label" />
+				<textbox id="fName" value="" />
+			</row>
+			<row>
+				<label value="Suffix start number(0...N)" />
+				<textbox id="fNumber" value="" />
+			</row>
+			<row>
+				<label value="Space frames" />
+				<textbox id="fSpace" value="" />
+			</row>
+			<row>
+				<label value="-----------------------------------------" />
+			</row>
+		</rows>
+	</grid>
+</dialog>
