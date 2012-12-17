@@ -23,7 +23,7 @@ function execute()
 		elem.y += offsetY;
 	};
 
-	fl.runScript( fl.configURI+"Commands/hbbµÄjsfl¿â/É¨Ãè.jsfl.lib", "scanDocument", {element:shift} );
+	fl.runScript( fl.configURI+"Commands/hbbjsfl/scan.jsfl.lib", "scanDocument", {element:shift} );
 
 
 	doc.width = parseInt(rect.width);

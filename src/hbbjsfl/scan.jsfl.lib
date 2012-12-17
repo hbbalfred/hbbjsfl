@@ -1,16 +1,12 @@
-/*
-pCallback{timeline, layer, frame, element}
-当扫描进入时调用
-
-nCallback{timeline, layer, frame, element}
-当扫描退出时调用
-
-deeper
-是否进行深度扫描
-
-scaned
-扫描过的元素(elements)
-*/
+/**
+ * scale the whole document
+ * @param pCallback(timeline, layer, frame, element)
+ * callback before scan starting
+ * @param nCallback{timeline, layer, frame, element}
+ * callback after scan completing
+ * @param deeper need deep scanning
+ * @param scaned filter element
+ */
 function scanDocument(pCallback, nCallback, deeper, scaned)
 {
 	var timelines = fl.getDocumentDOM().timelines;
@@ -19,9 +15,16 @@ function scanDocument(pCallback, nCallback, deeper, scaned)
 	}
 }
 
-/*
-指定对timeline的扫描
-*/
+
+/**
+ * scale the specified timeline
+ * @param pCallback(timeline, layer, frame, element)
+ * callback before scan starting
+ * @param nCallback{timeline, layer, frame, element}
+ * callback after scan completing
+ * @param deeper need deep scanning
+ * @param scaned filter element
+ */
 function scanTimeline(timeline, pCallback, nCallback, deeper, scaned)
 {
 	if(!scaned) scaned = {};
@@ -87,5 +90,3 @@ function scanTimeline(timeline, pCallback, nCallback, deeper, scaned)
 	}
 	if(hasNextTimelineCallback) nCallback.timeline(timeline, scaned);
 }
-
-

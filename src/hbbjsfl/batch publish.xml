@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <dialog buttons="accept, cancel" id="bp" title="批量发布">
     <vbox>
-        <flash width="200" src="批量发布.swf" id="bp" height="200"/>
+        <flash width="200" src="batch publish.swf" id="bp" height="200"/>
 		
 		<property id="selectedDocs" />
 		<property id="isTestMovie" />

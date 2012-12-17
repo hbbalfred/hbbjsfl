@@ -5,7 +5,7 @@
 				20.03.2010 - change to utf-8 and change name
 *************************************************************************/
 
-xui = fl.getDocumentDOM().xmlPanel( fl.configURI + "Commands/批量发布.xml");
+xui = fl.getDocumentDOM().xmlPanel( fl.configURI + "Commands/hbbjsfl/batch publish.xml");
 
 // xui.isPublishAll
 // xui.isTestMovie

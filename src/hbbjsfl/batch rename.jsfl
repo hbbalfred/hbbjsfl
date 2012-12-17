@@ -32,7 +32,7 @@ execute();
 
 // 事件一览
 function getXML(){
-	xmlData = _doc.xmlPanel(fl.configURI+"Commands/批量改名.xml");
+	xmlData = _doc.xmlPanel(fl.configURI+"Commands/hbbjsfl/batch rename.xml");
 
 	leadZero = (xmlData.leadZero=="true" ? true : false);
 

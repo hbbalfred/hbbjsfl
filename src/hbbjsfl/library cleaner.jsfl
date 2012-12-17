@@ -2,10 +2,10 @@ if( fl.getDocumentDOM() ){
 	try{
 		execute();
 	}catch(er){
-		alert('出错啦!\n' + er.toString());
+		alert('Error!\n' + er.toString());
 	}
 }else{
-	alert('没有打开文档，无法执行清理专家');
+	alert('No document');
 }
 
 
@@ -13,7 +13,7 @@ function execute()
 {
 	fl.outputPanel.clear();
 
-	var xui = fl.getDocumentDOM().xmlPanel(fl.configURI+"Commands/清理专家.xml");
+	var xui = fl.getDocumentDOM().xmlPanel(fl.configURI+"Commands/hbbjsfl/library cleaner.xml");
 	if(xui.dismiss == "accept")
 	{
 		if(xui.isRemoveGuide=="true") removeGuide();
@@ -113,16 +113,16 @@ function removeFolder(map)
 */
 function sortItems(items, usedItems, ignoreFolder, folderName)
 {
-	var folderPath = folderName + '-清理专家';
+	var folderPath = folderName + '-lib cleaner';
 
-	var CLASS_FOLDER = folderPath + '/类';
-	var BITMAP_FOLDER = folderPath + '/位图';
-	var MOVIECLIP_FOLDER = folderPath + '/影片剪辑';
-	var BUTTON_FOLDER = folderPath + '/按钮';
-	var GRAPHIC_FOLDER = folderPath + '/图形';
-	var MEDIA_FOLDER = folderPath + '/视音频';
-	var FONT_FOLDER = folderPath + '/字体';
-	var UNUSED_FOLDER = folderPath + '/未使用(可能)';
+	var CLASS_FOLDER = folderPath + '/class';
+	var BITMAP_FOLDER = folderPath + '/bitmap';
+	var MOVIECLIP_FOLDER = folderPath + '/movie clip';
+	var BUTTON_FOLDER = folderPath + '/button';
+	var GRAPHIC_FOLDER = folderPath + '/graphic';
+	var MEDIA_FOLDER = folderPath + '/video_audio';
+	var FONT_FOLDER = folderPath + '/font';
+	var UNUSED_FOLDER = folderPath + '/unuse(almost)';
 
 	var lib = fl.getDocumentDOM().library;
 
@@ -203,7 +203,7 @@ function getUsedItems()
 				scaned[ frame.soundName ] = frame.soundLibraryItem;
 	};
 
-	fl.runScript( fl.configURI+"Commands/hbb的jsfl库/扫描.jsfl.lib", "scanDocument", {frame:frameCall}, null, true, ob );
+	fl.runScript( fl.configURI+"Commands/hbbjsfl/scan.jsfl.lib", "scanDocument", {frame:frameCall}, null, true, ob );
 
 	return ob;
 }

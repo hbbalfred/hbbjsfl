@@ -1,0 +1,52 @@
+﻿<macromedia-extension
+	 name="hbb extensions bundle"
+	 version="2.0.1.2"
+	 type="Developer">
+
+	<author name="hbb" />
+
+	<products>
+		<product name="Flash" version="7" primary="true" />
+	</products>
+
+	<description>
+	<![CDATA[
+hbb extensions bundle<br>
+https://github.com/hbbalfred/hbbjsfl
+	]]>
+	</description>
+
+	<ui-access>
+	<![CDATA[
+	]]>
+	</ui-access>
+
+	<license-agreement>
+	<![CDATA[
+This content is released under the MIT License(http://opensource.org/licenses/MIT).	
+	]]>
+	</license-agreement>
+
+	<files>
+		<file source="hbbjsfl/scan.jsfl.lib" destination="$flash/Commands/hbbjsfl" />
+
+		<file source="hbbjsfl/library cleaner.jsfl" destination="$flash/Commands/hbbjsfl" />
+		<file source="hbbjsfl/library cleaner.xml" destination="$flash/Commands/hbbjsfl" />
+
+		<file source="hbbjsfl/clean stroke.jsfl" destination="$flash/Commands/hbbjsfl" />
+
+		<file source="hbbjsfl/clean fill.jsfl" destination="$flash/Commands/hbbjsfl" />
+
+		<file source="hbbjsfl/auto edge.jsfl" destination="$flash/Commands/hbbjsfl" />
+
+		<file source="hbbjsfl/stage resize.jsfl" destination="$flash/Commands/hbbjsfl" />
+
+		<file source="hbbjsfl/batch rename.jsfl" destination="$flash/Commands/hbbjsfl" />
+		<file source="hbbjsfl/batch rename.xml" destination="$flash/Commands/hbbjsfl" />
+
+		<file source="hbbjsfl/batch publish.jsfl" destination="$flash/Commands/hbbjsfl" />
+		<file source="hbbjsfl/batch publish.xml" destination="$flash/Commands/hbbjsfl" />
+		<file source="hbbjsfl/batch publish.swf" destination="$flash/Commands/hbbjsfl" />
+	</files>
+
+</macromedia-extension>
