@@ -47,6 +47,8 @@ This content is released under the MIT License(http://opensource.org/licenses/MI
 		<file source="hbbjsfl/batch publish.jsfl" destination="$flash/Commands/hbbjsfl" />
 		<file source="hbbjsfl/batch publish.xml" destination="$flash/Commands/hbbjsfl" />
 		<file source="hbbjsfl/batch publish.swf" destination="$flash/Commands/hbbjsfl" />
+
+		<file source="hbbjsfl/one item one frame.jsfl" destination="$flash/Commands/hbbjsfl" />
 	</files>
 
 </macromedia-extension>
