@@ -1,6 +1,6 @@
 ﻿<macromedia-extension
 	 name="hbb extensions bundle"
-	 version="2.0.1.2"
+	 version="2.0.1.3"
 	 type="Developer">
 
 	<author name="hbb" />
@@ -23,7 +23,7 @@ https://github.com/hbbalfred/hbbjsfl
 
 	<license-agreement>
 	<![CDATA[
-This content is released under the MIT License(http://opensource.org/licenses/MIT).	
+These contents are released under the MIT License(http://opensource.org/licenses/MIT).	
 	]]>
 	</license-agreement>
 
@@ -49,6 +49,8 @@ This content is released under the MIT License(http://opensource.org/licenses/MI
 		<file source="hbbjsfl/batch publish.swf" destination="$flash/Commands/hbbjsfl" />
 
 		<file source="hbbjsfl/one item one frame.jsfl" destination="$flash/Commands/hbbjsfl" />
+
+		<file source="hbbjsfl/export png sequence.jsfl" destination="$flash/Commands/hbbjsfl" />
 	</files>
 
 </macromedia-extension>

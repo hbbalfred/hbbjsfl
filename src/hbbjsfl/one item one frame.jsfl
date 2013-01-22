@@ -1,3 +1,12 @@
+/**
+ * One Item One Frame
+ * put the selected item into frame by frame
+ * here are 2 mods in this extension 
+ * for symbol mod and for library mod
+ * 
+ * known issues:
+ * in for symbol mod, the element's filter(s) will be disappeared.
+ */
 (function(){
 	var modMessage = "";
 	modMessage += "(0) for symbol(default)" + "\n";
